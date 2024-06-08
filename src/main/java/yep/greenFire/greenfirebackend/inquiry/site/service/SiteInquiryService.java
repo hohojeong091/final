@@ -53,7 +53,7 @@ public class SiteInquiryService {
 
         final InquiryContent newContent = siteInquiryRepository.save(newInquiryContent);
 
-
+ㅓㄹ허허허허
         return newContent.getInquiryCode();
     }
 }
