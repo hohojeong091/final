@@ -26,8 +26,11 @@ import yep.greenFire.greenfirebackend.auth.handler.LoginFailureHandler;
 import yep.greenFire.greenfirebackend.auth.handler.LoginSuccessHandler;
 import yep.greenFire.greenfirebackend.auth.service.AuthService;
 import yep.greenFire.greenfirebackend.member.domain.type.MemberRole;
+import yep.greenFire.greenfirebackend.seller.domain.entity.Seller;
 
 import java.util.Arrays;
+
+import static yep.greenFire.greenfirebackend.member.domain.type.MemberRole.*;
 
 @RequiredArgsConstructor
 @EnableMethodSecurity
@@ -54,6 +57,9 @@ public class SecurityConfig {
                     auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
                     auth.requestMatchers(HttpMethod.POST, "/members/signup", "/members/login").permitAll();
                     auth.requestMatchers(HttpMethod.GET, "/admin/notices/**").permitAll();
+//                    auth.requestMatchers(HttpMethod.GET, "/inquiry/view").permitAll();
+//                    auth.requestMatchers(HttpMethod.GET, "/inquiry/regist").hasRole(MEMBER, SELLER);
+//                    auth.requestMatchers(HttpMethod.GET, "/inquiry/reply").hasRole(ADMIN, SELLER);
                     auth.requestMatchers("/admin/**").hasRole(MemberRole.ADMIN.toString());
                     auth.requestMatchers("/seller/**").hasRole(MemberRole.SELLER.toString());
                     auth.requestMatchers(HttpMethod.GET,"/product/**").permitAll();
