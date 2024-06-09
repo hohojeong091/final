@@ -11,4 +11,6 @@ public interface ProductInquiryRepository extends JpaRepository<InquiryContent, 
     Page<InquiryContent> findByProductCode(long productCode, Pageable pageable);
 
 
+    InquiryContent ProductReplysave(InquiryContent newProductInquiryReply);
+
 }

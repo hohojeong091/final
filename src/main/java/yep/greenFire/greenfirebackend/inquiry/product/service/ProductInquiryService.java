@@ -1,5 +1,6 @@
 package yep.greenFire.greenfirebackend.inquiry.product.service;
 
+import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -10,12 +11,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
 import yep.greenFire.greenfirebackend.inquiry.product.domain.repository.ProductInquiryRepository;
 import yep.greenFire.greenfirebackend.inquiry.product.dto.request.ProductInquiryCreateRequest;
+import yep.greenFire.greenfirebackend.inquiry.product.dto.request.ProductReplyCreateRequest;
 import yep.greenFire.greenfirebackend.inquiry.product.dto.response.ProductInquiryResponse;
+
+import java.util.Date;
 
 
 @Service
+
 public class ProductInquiryService {
-    private ProductInquiryRepository memberProductInquiryRepository;
+    private ProductInquiryRepository productInquiryRepository;
 
 
     private Pageable getPageable(final Integer page) {
@@ -23,7 +28,7 @@ public class ProductInquiryService {
     }
     public Page<ProductInquiryResponse> getProductInquiryContent(long productCode, Integer page) {
 
-        Page<InquiryContent> productInquiry = memberProductInquiryRepository.findByProductCode(productCode, getPageable(page));
+        Page<InquiryContent> productInquiry = productInquiryRepository.findByProductCode(productCode, getPageable(page));
 
         return productInquiry.map(ProductInquiryResponse::from);
 
@@ -44,7 +49,7 @@ public class ProductInquiryService {
                 ProductInquiryCreateRequest.getInquiryWriteDate()
         );
 
-        final InquiryContent newInquiry = memberProductInquiryRepository.save(newProductInquiry);
+        final InquiryContent newInquiry = productInquiryRepository.save(newProductInquiry);
 
         return newInquiry.getInquiryCode();
 
@@ -59,24 +64,25 @@ public class ProductInquiryService {
 //
 //    }
 
-//    public int save(SellerProductReplyCreateRequest sellerProductReplyCreateRequest) {
-//
-//        final InquiryContent newProductInquiryReply = InquiryContent.of4(
-//                sellerProductReplyCreateRequest.getProductCode(),
-//                sellerProductReplyCreateRequest.getProductName(),
-//                sellerProductReplyCreateRequest.getMemberCode(),
-//                sellerProductReplyCreateRequest.getInquiryTitle(),
-//                sellerProductReplyCreateRequest.getInquiryDetail(),
-//                sellerProductReplyCreateRequest.getInquiryWriteDate(),
-//                sellerProductReplyCreateRequest.getInquiryReply(),
-//                sellerProductReplyCreateRequest.getInquiryReplyStatus()
-//
-//        );
-//
-//        final InquiryContent newProductReply = sellerProductInquiryRepository.save(newProductInquiryReply);
-//        return newProductReply.getInquiryCode();
-//
-//    }
+    public int ProductReplysave(ProductReplyCreateRequest ProductReplyCreateRequest) {
+
+        final InquiryContent newProductInquiryReply = InquiryContent.of4(
+                ProductReplyCreateRequest.getProductCode(),
+                ProductReplyCreateRequest.getMemberCode(),
+                ProductReplyCreateRequest.getInquiryTitle(),
+                ProductReplyCreateRequest.getInquiryDetail(),
+                ProductReplyCreateRequest.getInquiryWriteDate(),
+                ProductReplyCreateRequest.getInquiryReply(),
+                ProductReplyCreateRequest.getInquiryReplyStatus()
+
+
+
+        );
+
+        final InquiryContent newProductReply =productInquiryRepository.ProductReplysave(newProductInquiryReply);
+        return newProductReply.getInquiryCode();
+
+    }
 
 //    public void remove(int inquiryCode) {
 //

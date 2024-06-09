@@ -9,11 +9,15 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class ProductReplyCreateRequest {
 
+    private int productCode;
     private int memberCode;
-    private int inquiryCode;
     private String inquiryTitle;
     private String inquiryDetail;
     private Date inquiryWriteDate;
+    private String inquiryReply;
+    private String inquiryReplyStatus;
+
+
 
 
 

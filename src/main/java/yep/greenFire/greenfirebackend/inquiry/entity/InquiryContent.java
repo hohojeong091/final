@@ -40,6 +40,7 @@ public class InquiryContent {
 
     private int inquiryCateCode;
 
+    //fk로 가져와야하는 것
     private int inquiryProduct;
     private int inquiryChallenge;
 
@@ -76,31 +77,31 @@ public class InquiryContent {
 
          return new InquiryContent();
     }
-//
-//    public static InquiryContent of4(
-//            final int productCode, final String productName, final int memberCode,
-//            final String inquiryTitle, final String inquiryDetail, final Date inquiryWriteDate,
-//            final String inquiryReply, final String inquiryReplyStatus
-//    ) {
-//        return new InquiryContent();
-//
-//
-//    }
-//
-//
-//    public void inquiryContent(int inquiryCode, int memberCode, Date inquiryWriteDate, String inquiryStatus, String inquiryDetail, String inquiryTitle, Date inquiryModifyDate, Date inquiryDeleteDate, String inquiryReply, String inquiryReplyStatus, String memberId, String memberName, String memberEmail) {
-//        this.inquiryCode = inquiryCode;
-//        this.memberCode = memberCode;
-//        this.inquiryWriteDate = inquiryWriteDate;
-//        this.inquiryStatus = inquiryStatus;
-//        this.inquiryDetail = inquiryDetail;
-//        this.inquiryTitle = inquiryTitle;
-//        this.inquiryModifyDate = inquiryModifyDate;
-//        this.inquiryDeleteDate = inquiryDeleteDate;
-//        this.inquiryReply = inquiryReply;
-//        this.inquiryReplyStatus = inquiryReplyStatus;
-//
-//    }
+
+    public static InquiryContent of4(
+            final int productCode, final int memberCode,
+            final String inquiryTitle, final String inquiryDetail, final Date inquiryWriteDate,
+            final String inquiryReply, final String inquiryReplyStatus
+    ) {
+        return new InquiryContent();
+
+
+    }
+
+
+    public void inquiryContent(int inquiryCode, int memberCode, Date inquiryWriteDate, String inquiryStatus, String inquiryDetail, String inquiryTitle, Date inquiryModifyDate, Date inquiryDeleteDate, String inquiryReply, String inquiryReplyStatus, String memberId, String memberName, String memberEmail) {
+        this.inquiryCode = inquiryCode;
+        this.memberCode = memberCode;
+        this.inquiryWriteDate = inquiryWriteDate;
+        this.inquiryStatus = inquiryStatus;
+        this.inquiryDetail = inquiryDetail;
+        this.inquiryTitle = inquiryTitle;
+        this.inquiryModifyDate = inquiryModifyDate;
+        this.inquiryDeleteDate = inquiryDeleteDate;
+        this.inquiryReply = inquiryReply;
+        this.inquiryReplyStatus = inquiryReplyStatus;
+
+    }
 //
 //
 //    public static AdminInquiryResponse from(AdminInquiryResponse adminInquiryResponse) {
