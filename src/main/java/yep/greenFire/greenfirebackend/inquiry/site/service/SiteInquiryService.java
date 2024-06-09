@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import yep.greenFire.greenfirebackend.auth.type.CustomUser;
 import yep.greenFire.greenfirebackend.inquiry.site.domain.repository.SiteInquiryRepository;
 import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
-import yep.greenFire.greenfirebackend.inquiry.site.dto.request.Member;
+import yep.greenFire.greenfirebackend.inquiry.site.dto.request.ReplyInquiryCreateRequest;
+import yep.greenFire.greenfirebackend.inquiry.site.dto.request.InquiryCreateRequest;
 import yep.greenFire.greenfirebackend.inquiry.site.dto.response.MemberInquiryResponse;
 
 @Service
@@ -39,7 +40,7 @@ public class SiteInquiryService {
 
 
     public int save(
-            @RequestBody @Valid final Member inquiryCreateRequest,
+            @RequestBody @Valid final InquiryCreateRequest inquiryCreateRequest,
             @AuthenticationPrincipal CustomUser customUser
     ) {
 
@@ -52,7 +53,32 @@ public class SiteInquiryService {
         );
 
         final InquiryContent newContent = siteInquiryRepository.save(newInquiryContent);
-        
+
         return newContent.getInquiryCode();
+    }
+
+    public int Replysave(
+            @RequestBody @Valid ReplyInquiryCreateRequest replyInquiryCreateRequest,
+            @AuthenticationPrincipal CustomUser customUser) {
+
+        final InquiryContent newInquiryReply= InquiryContent.of2(
+                replyInquiryCreateRequest.getMemberCode(),
+                replyInquiryCreateRequest.getInquiryCode(),
+                replyInquiryCreateRequest.getInquiryTitle(),
+                replyInquiryCreateRequest.getInquiryDetail(),
+                replyInquiryCreateRequest.getInquiryWriteDate()
+
+        );
+
+        final InquiryContent newContent = siteInquiryRepository.save(newInquiryReply);
+
+        return newContent.getInquiryCode();
+    }
+
+    public void remove(int inquiryCode) {
+
+        siteInquiryRepository.deleteById(inquiryCode);
+        //특정 문의 코드의 글을 삭제하겠다.
+
     }
 }

@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @RequiredArgsConstructor
-public class SellerProductReplyCreateRequest {
+public class ProductReplyCreateResponse {
 
     private int productCode;
     private String productName;
@@ -18,7 +18,7 @@ public class SellerProductReplyCreateRequest {
     private String inquiryReply;
     private String inquiryReplyStatus;
 
-    public SellerProductReplyCreateRequest(int productCode, String productName, int memberCode, String inquiryTitle, String inquiryDetail, Date inquiryWriteDate, String inquiryReply, String inquiryReplyStatus) {
+    public ProductReplyCreateResponse(int productCode, String productName, int memberCode, String inquiryTitle, String inquiryDetail, Date inquiryWriteDate, String inquiryReply, String inquiryReplyStatus) {
         this.productCode = productCode;
         this.productName = productName;
         this.memberCode = memberCode;

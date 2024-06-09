@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public class AdminInquiryCreateRequest {
+public class ReplyInquiryCreateRequest {
 
 
     private int inquiryCode;
@@ -20,12 +20,12 @@ public class AdminInquiryCreateRequest {
     @Min(value=1)
     private int memberCode;
 
-    @NotBlank
-    private String memberId;
-    @NotBlank
-    private String memberName;
-    @NotBlank
-    private String memberEmail;
+//    @NotBlank
+//    private String memberId;
+//    @NotBlank
+//    private String memberName;
+//    @NotBlank
+//    private String memberEmail;
 
 
 

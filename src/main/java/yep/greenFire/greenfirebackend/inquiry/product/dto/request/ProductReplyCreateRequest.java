@@ -1,23 +1,19 @@
-package yep.greenFire.greenfirebackend.inquiry.site.dto.request;
+package yep.greenFire.greenfirebackend.inquiry.product.dto.request;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Date;
 
 @Getter
 @RequiredArgsConstructor
-public class Member {
+public class ProductReplyCreateRequest {
 
     private int memberCode;
-
-    @NotBlank
+    private int inquiryCode;
     private String inquiryTitle;
-
-    @NotBlank
     private String inquiryDetail;
-
-
+    private Date inquiryWriteDate;
 
 
 

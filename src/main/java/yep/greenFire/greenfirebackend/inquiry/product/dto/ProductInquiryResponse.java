@@ -1,12 +1,11 @@
 package yep.greenFire.greenfirebackend.inquiry.product.dto;
 
 import lombok.Getter;
-import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
 
 import java.util.Date;
 
 @Getter
-public class SellerProductInquiryResponse {
+public class ProductInquiryResponse {
 
     private int productCode;
     private String inquiryTitle;
@@ -16,7 +15,7 @@ public class SellerProductInquiryResponse {
     private String inquiryReply;
 
 
-    public SellerProductInquiryResponse(int productCode, String inquiryTitle, String inquiryDetail, Date inquiryWriteDate, String inquiryReplyStatus, String inquiryReply) {
+    public ProductInquiryResponse(int productCode, String inquiryTitle, String inquiryDetail, Date inquiryWriteDate, String inquiryReplyStatus, String inquiryReply) {
         this.productCode = productCode;
         this.inquiryTitle = inquiryTitle;
         this.inquiryDetail = inquiryDetail;

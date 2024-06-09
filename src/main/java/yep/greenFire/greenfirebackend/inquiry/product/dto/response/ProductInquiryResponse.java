@@ -2,7 +2,9 @@ package yep.greenFire.greenfirebackend.inquiry.product.dto.response;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -26,17 +28,18 @@ public class ProductInquiryResponse {
         this.inquiryReplyStatus = inquiryReplyStatus;
     }
 
-//    public static MemberProductInquiryResponse from(InquiryContent inquiryContent) {
-//
-//        return new MemberProductInquiryResponse(
-//                inquiryContent.getInquiryProduct(),
-//                //어떻게 해결할 것인가.
-//                inquiryContent.getInquiryTitle(),
-//                inquiryContent.getInquiryDetail(),
-//                inquiryContent.getInquiryWriteDate(),
-//                inquiryContent.getInquiryReplyStatus()
-//
-//
-//        );
-//    }
+
+
+    public static ProductInquiryResponse from(InquiryContent inquiryContent) {
+
+        return new ProductInquiryResponse(
+                inquiryContent.getInquiryProduct(),
+                inquiryContent.getInquiryTitle(),
+                inquiryContent.getInquiryDetail(),
+                inquiryContent.getInquiryWriteDate(),
+                inquiryContent.getInquiryReplyStatus()
+
+
+        );
+    }
 }

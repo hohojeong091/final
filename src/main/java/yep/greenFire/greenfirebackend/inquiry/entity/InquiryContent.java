@@ -5,9 +5,11 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_inquiry")
@@ -23,22 +25,23 @@ public class InquiryContent {
     private int memberCode;
 
     @CreatedDate
-    private LocalDateTime inquiryWriteDate;
+    private Date inquiryWriteDate;
 
- //   private String inquiryStatus;
+    private String inquiryStatus;
     private String inquiryDetail;
     private String inquiryTitle;
- //   @LastModifiedDate
- //   private Date inquiryModifyDate;
-  //  private Date inquiryDeleteDate;
-  //  private int replyMemberCode;
- //   private String inquiryReply;
- //   private String inquiryReplyStatus;
 
- //   private int inquiryCateCode;
+    @LastModifiedDate
+    private Date inquiryModifyDate;
+    private Date inquiryDeleteDate;
+    private int replyMemberCode;
+    private String inquiryReply;
+    private String inquiryReplyStatus;
 
- //   private int inquiryProduct;
- //   private int inquiryChallenge;
+    private int inquiryCateCode;
+
+    private int inquiryProduct;
+    private int inquiryChallenge;
 
 
     public InquiryContent(int memberCode, String inquiryTitle, String inquiryDetail) {
@@ -59,18 +62,20 @@ public class InquiryContent {
         );
     }
 
-//    public static InquiryContent of2(
-//            final int inquiryCode, final String inquiryWriteDate,
-//            final String inquiryTitle, final String inquiryDetail) {
-//        return new InquiryContent();
-//    }
-//
-//    public static InquiryContent of3(
-//            final int productCode, final String productName, final int memberCode,
-//            final String inquiryTitle, final String inquiryDetail, final Date inquiryWriteDate) {
-//
-//         return new InquiryContent();
-//    }
+    public static InquiryContent of2(
+            final int memberCode, final int inquiryCode, final String inquiryTitle,
+            final String inquiryDetail, final String inquiryWriteDate) {
+        return new InquiryContent();
+    }
+
+
+
+    public static InquiryContent of3(
+            final int productCode, final String productName, final int memberCode,
+            final String inquiryTitle, final String inquiryDetail, final Date inquiryWriteDate) {
+
+         return new InquiryContent();
+    }
 //
 //    public static InquiryContent of4(
 //            final int productCode, final String productName, final int memberCode,
