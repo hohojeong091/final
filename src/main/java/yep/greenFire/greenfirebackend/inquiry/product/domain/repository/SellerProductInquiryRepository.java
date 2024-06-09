@@ -10,10 +10,10 @@ import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
 public interface SellerProductInquiryRepository {
 
 
-    Page<InquiryContent> findByProductCode(long productCode, Pageable page);
-
-    InquiryContent save(InquiryContent newProductInquiryReply);
-
-    void deleteById(int inquiryCode);
+//    Page<InquiryContent> findByProductCode(long productCode, Pageable page);
+//
+//    InquiryContent save(InquiryContent newProductInquiryReply);
+//
+//    void deleteById(int inquiryCode);
 
 }

@@ -21,39 +21,39 @@ import java.util.Date;
 
 public class ProductInquiryService {
     private ProductInquiryRepository productInquiryRepository;
-
-
-    private Pageable getPageable(final Integer page) {
-        return PageRequest.of(page - 1, 10, Sort.by("inquiryCode").descending());
-    }
-    public Page<ProductInquiryResponse> getProductInquiryContent(long productCode, Integer page) {
-
-        Page<InquiryContent> productInquiry = productInquiryRepository.findByProductCode(productCode, getPageable(page));
-
-        return productInquiry.map(ProductInquiryResponse::from);
-
-    }
-
-
-
-
-    public int save(
-            @RequestBody @Valid final ProductInquiryCreateRequest ProductInquiryCreateRequest) {
-
-        final InquiryContent newProductInquiry = InquiryContent.of3(
-                ProductInquiryCreateRequest.getProductCode(),
-                ProductInquiryCreateRequest.getProductName(),
-                ProductInquiryCreateRequest.getMemberCode(),
-                ProductInquiryCreateRequest.getInquiryTitle(),
-                ProductInquiryCreateRequest.getInquiryDetail(),
-                ProductInquiryCreateRequest.getInquiryWriteDate()
-        );
-
-        final InquiryContent newInquiry = productInquiryRepository.save(newProductInquiry);
-
-        return newInquiry.getInquiryCode();
-
-    }
+//
+//
+//    private Pageable getPageable(final Integer page) {
+//        return PageRequest.of(page - 1, 10, Sort.by("inquiryCode").descending());
+//    }
+//    public Page<ProductInquiryResponse> getProductInquiryContent(long productCode, Integer page) {
+//
+//        Page<InquiryContent> productInquiry = productInquiryRepository.findByProductCode(productCode, getPageable(page));
+//
+//        return productInquiry.map(ProductInquiryResponse::from);
+//
+//    }
+//
+//
+//
+//
+//    public int save(
+//            @RequestBody @Valid final ProductInquiryCreateRequest ProductInquiryCreateRequest) {
+//
+//        final InquiryContent newProductInquiry = InquiryContent.of3(
+//                ProductInquiryCreateRequest.getProductCode(),
+//                ProductInquiryCreateRequest.getProductName(),
+//                ProductInquiryCreateRequest.getMemberCode(),
+//                ProductInquiryCreateRequest.getInquiryTitle(),
+//                ProductInquiryCreateRequest.getInquiryDetail(),
+//                ProductInquiryCreateRequest.getInquiryWriteDate()
+//        );
+//
+//        final InquiryContent newInquiry = productInquiryRepository.save(newProductInquiry);
+//
+//        return newInquiry.getInquiryCode();
+//
+//    }
 
     //seller
 
@@ -65,28 +65,28 @@ public class ProductInquiryService {
 //    }
 
 
-    public int productReplysave(ProductReplyCreateRequest ProductReplyCreateRequest) {
-
-        final InquiryContent newProductInquiryReply = InquiryContent.of4(
-                ProductReplyCreateRequest.getProductCode(),
-                ProductReplyCreateRequest.getMemberCode(),
-                ProductReplyCreateRequest.getInquiryTitle(),
-                ProductReplyCreateRequest.getInquiryDetail(),
-                ProductReplyCreateRequest.getInquiryWriteDate(),
-                ProductReplyCreateRequest.getInquiryReply(),
-                ProductReplyCreateRequest.getInquiryReplyStatus()
-
-        );
-
-        final InquiryContent newProductReply =productInquiryRepository.ProductReplysave(newProductInquiryReply);
-        return newProductReply.getInquiryCode();
-
-    }
-
-
-
-    public void remove(int inquiryCode) {
-
-        productInquiryRepository.deleteById(inquiryCode);
-    }
+//    public int productReplysave(ProductReplyCreateRequest ProductReplyCreateRequest) {
+//
+//        final InquiryContent newProductInquiryReply = InquiryContent.of4(
+//                ProductReplyCreateRequest.getProductCode(),
+//                ProductReplyCreateRequest.getMemberCode(),
+//                ProductReplyCreateRequest.getInquiryTitle(),
+//                ProductReplyCreateRequest.getInquiryDetail(),
+//                ProductReplyCreateRequest.getInquiryWriteDate(),
+//                ProductReplyCreateRequest.getInquiryReply(),
+//                ProductReplyCreateRequest.getInquiryReplyStatus()
+//
+//        );
+//
+//        final InquiryContent newProductReply =productInquiryRepository.ProductReplysave(newProductInquiryReply);
+//        return newProductReply.getInquiryCode();
+//
+//    }
+//
+//
+//
+//    public void remove(int inquiryCode) {
+//
+//        productInquiryRepository.deleteById(inquiryCode);
+//    }
 }

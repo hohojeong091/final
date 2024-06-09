@@ -2,6 +2,7 @@ package yep.greenFire.greenfirebackend.auth.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -35,6 +36,7 @@ import static yep.greenFire.greenfirebackend.member.domain.type.MemberRole.*;
 @RequiredArgsConstructor
 @EnableMethodSecurity
 @Configuration
+
 public class SecurityConfig {
 
     private final PasswordEncoder passwordEncoder;

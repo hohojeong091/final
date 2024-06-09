@@ -8,9 +8,9 @@ import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
 
 @Repository
 public interface ProductInquiryRepository extends JpaRepository<InquiryContent, Integer> {
-    Page<InquiryContent> findByProductCode(long productCode, Pageable pageable);
-
-
-    InquiryContent ProductReplysave(InquiryContent newProductInquiryReply);
+//    Page<InquiryContent> findByProductCode(long productCode, Pageable pageable);
+//
+//
+//    InquiryContent ProductReplysave(InquiryContent newProductInquiryReply);
 
 }

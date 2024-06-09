@@ -25,7 +25,7 @@ import java.net.URI;
 public class SiteInquiryController {
 
         private SiteInquiryService siteInquiryService;
-        @GetMapping("/view")
+        @GetMapping("/inquiry/view")
         public ResponseEntity<PagingResponse> getInquiryContent(
             @RequestParam(defaultValue = "1") final Integer page
 
@@ -46,15 +46,19 @@ public class SiteInquiryController {
         return ResponseEntity.ok(pagingResponse);
     }
 
-    @PostMapping("member/regist")
+    @PostMapping("/members/regist")
     public ResponseEntity<MemberInquiryResponse> save (
             @RequestBody @Valid final InquiryCreateRequest inquiryCreateRequest,
             @AuthenticationPrincipal CustomUser customUser
-
     ) {
+        System.out.println("save실행 ");
+        System.out.println("getInquiryTitle : " + inquiryCreateRequest.getInquiryTitle());
+        System.out.println("getInquiryDetail : " + inquiryCreateRequest.getInquiryDetail());
+        System.out.println(("customUser : " + customUser.getAuthorities()) );
 
         final int inquiryCode = siteInquiryService.save(inquiryCreateRequest, customUser);
-        return ResponseEntity.created(URI.create("/list" +inquiryCode)).build();
+
+        return ResponseEntity.created(URI.create("/view" +inquiryCode)).build();
 
 
     }

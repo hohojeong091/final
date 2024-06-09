@@ -39,17 +39,33 @@ public class SiteInquiryService {
 
 
 
+//    public int save(
+//            @RequestBody @Valid final InquiryCreateRequest inquiryCreateRequest,
+//            @AuthenticationPrincipal CustomUser customUser
+//    ) {
+//
+//        final InquiryContent newInquiryContent = InquiryContent.of(
+//                inquiryCreateRequest.getMemberCode(),
+//                inquiryCreateRequest.getInquiryTitle(),
+//                inquiryCreateRequest.getInquiryDetail()
+//
+//
+//        );
+//
+//        final InquiryContent newContent = siteInquiryRepository.save(newInquiryContent);
+//
+//        return newContent.getInquiryCode();
+//    }
     public int save(
-            @RequestBody @Valid final InquiryCreateRequest inquiryCreateRequest,
-            @AuthenticationPrincipal CustomUser customUser
+        InquiryCreateRequest inquiryCreateRequest,
+        CustomUser customUser
     ) {
+        System.out.println("save에 들어왔음");
 
         final InquiryContent newInquiryContent = InquiryContent.of(
                 inquiryCreateRequest.getMemberCode(),
                 inquiryCreateRequest.getInquiryTitle(),
                 inquiryCreateRequest.getInquiryDetail()
-
-
         );
 
         final InquiryContent newContent = siteInquiryRepository.save(newInquiryContent);
