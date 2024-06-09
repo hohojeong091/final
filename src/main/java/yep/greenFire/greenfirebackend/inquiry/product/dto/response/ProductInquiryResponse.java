@@ -1,16 +1,13 @@
-package yep.greenFire.greenfirebackend.inquiry.product.member.dto.response;
+package yep.greenFire.greenfirebackend.inquiry.product.dto.response;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
 
 import java.util.Date;
 
 @Getter
 @RequiredArgsConstructor
-@Service
-public class MemberProductInquiryResponse {
+public class ProductInquiryResponse {
 
     //상품문의에서 보여줘야할 것들
 
@@ -21,7 +18,7 @@ public class MemberProductInquiryResponse {
     private Date inquiryWriteDate;
     private String inquiryReplyStatus;
 
-    public MemberProductInquiryResponse(int productCode, String inquiryTitle, String inquiryDetail, Date inquiryWriteDate, String inquiryReplyStatus) {
+    public ProductInquiryResponse(int productCode, String inquiryTitle, String inquiryDetail, Date inquiryWriteDate, String inquiryReplyStatus) {
         this.productCode = productCode;
         this.inquiryTitle = inquiryTitle;
         this.inquiryDetail = inquiryDetail;

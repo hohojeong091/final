@@ -1,4 +1,4 @@
-package yep.greenFire.greenfirebackend.inquiry.product.seller.domain.repository;
+package yep.greenFire.greenfirebackend.inquiry.product.domain.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

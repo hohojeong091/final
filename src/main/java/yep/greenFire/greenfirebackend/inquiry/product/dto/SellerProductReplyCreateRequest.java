@@ -1,4 +1,4 @@
-package yep.greenFire.greenfirebackend.inquiry.product.seller.dto.request;
+package yep.greenFire.greenfirebackend.inquiry.product.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

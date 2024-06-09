@@ -1,4 +1,4 @@
-package yep.greenFire.greenfirebackend.inquiry.product.seller.dto.response;
+package yep.greenFire.greenfirebackend.inquiry.product.dto;
 
 import lombok.Getter;
 import yep.greenFire.greenfirebackend.inquiry.entity.InquiryContent;
