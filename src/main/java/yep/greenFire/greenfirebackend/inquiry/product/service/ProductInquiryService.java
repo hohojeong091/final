@@ -83,8 +83,10 @@ public class ProductInquiryService {
 
     }
 
-//    public void remove(int inquiryCode) {
-//
-//        sellerProductInquiryRepository.deleteById(inquiryCode);
-//    }
+
+
+    public void remove(int inquiryCode) {
+
+        productInquiryRepository.deleteById(inquiryCode);
+    }
 }

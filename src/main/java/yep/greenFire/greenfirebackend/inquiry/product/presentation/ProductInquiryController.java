@@ -63,6 +63,7 @@ public class ProductInquiryController {
     @PostMapping("seller/regist")
     public ResponseEntity<ProductReplyCreateResponse> ProductReplysave(
             @RequestBody @Valid ProductReplyCreateRequest productReplyCreateRequest
+
     ) {
         final int productInquiryReplyCode = productInquiryService.productReplysave(productReplyCreateRequest);
 
@@ -70,13 +71,13 @@ public class ProductInquiryController {
     }
 
 
-//    @GetMapping("/remove")
-//    public ResponseEntity<Void> remove (
-//            @RequestParam int inquiryCode
-//    ) {
-//        sellerProductInquiryService.remove(inquiryCode);
-//
-//        return ResponseEntity.noContent().build();
-//    }
+    @GetMapping("/remove")
+    public ResponseEntity<Void> remove (
+            @RequestParam int inquiryCode
+    ) {
+        productInquiryService.remove(inquiryCode);
+
+        return ResponseEntity.noContent().build();
+    }
 
 }
