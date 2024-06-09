@@ -64,7 +64,8 @@ public class ProductInquiryService {
 //
 //    }
 
-    public int ProductReplysave(ProductReplyCreateRequest ProductReplyCreateRequest) {
+
+    public int productReplysave(ProductReplyCreateRequest ProductReplyCreateRequest) {
 
         final InquiryContent newProductInquiryReply = InquiryContent.of4(
                 ProductReplyCreateRequest.getProductCode(),
@@ -74,8 +75,6 @@ public class ProductInquiryService {
                 ProductReplyCreateRequest.getInquiryWriteDate(),
                 ProductReplyCreateRequest.getInquiryReply(),
                 ProductReplyCreateRequest.getInquiryReplyStatus()
-
-
 
         );
 
