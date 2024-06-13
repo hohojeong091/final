@@ -10,14 +10,15 @@ public class InquiryResponse {
 
     //문의 등록 전 문의 목록 조회
 
-    private Integer inquiryCode;
-    private Date inquiryWriteDate;
-    private String inquiryTitle;
-    private String inquiryDetail;
-    private String inquiryReplyStatus;
+    private final Integer inquiryCode;
+    private final Date inquiryWriteDate;
+    private final String inquiryTitle;
+    private final String inquiryDetail;
+    private final String inquiryReplyStatus;
 
 
-    public InquiryResponse(Integer inquiryCode, Date inquiryWriteDate, String inquiryTitle, String inquiryDetail, String inquiryReplyStatus) {
+    public InquiryResponse(final Integer inquiryCode, final Date inquiryWriteDate, final String inquiryTitle,
+                           final String inquiryDetail, final String inquiryReplyStatus) {
         this.inquiryCode = inquiryCode;
         this.inquiryWriteDate = inquiryWriteDate;
         this.inquiryTitle = inquiryTitle;

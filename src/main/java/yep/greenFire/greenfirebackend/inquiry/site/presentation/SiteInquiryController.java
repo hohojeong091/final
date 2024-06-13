@@ -65,7 +65,7 @@ public class SiteInquiryController {
 
 
 
-    @GetMapping("members/detail")
+    @GetMapping("/detail/{inquiryCode}")
     public ResponseEntity<InquiryResponse> getInquiryDetail(
             @PathVariable final Integer inquiryCode
     ) {
