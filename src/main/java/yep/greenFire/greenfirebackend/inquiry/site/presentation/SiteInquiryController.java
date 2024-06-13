@@ -76,8 +76,8 @@ public class SiteInquiryController {
         return ResponseEntity.ok(inquiryResponse);
 //        return null;
     }
-
-    //사이트 문의 답변 등록
+//
+//    사이트 문의 답변 등록
 //    @GetMapping("/admin/regist")
 //    public ResponseEntity<AdminInquiryResponse> save (
 //            @RequestBody @Valid final ReplyInquiryCreateRequest replyInquiryCreateRequest,
