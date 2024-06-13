@@ -44,6 +44,8 @@ public class SiteInquiryController {
         final PagingButtonInfo pagingButtonInfo = Pagination.getPagingButtonInfo(inquiryResponse);
         final PagingResponse pagingResponse = PagingResponse.of(inquiryResponse.getContent(), pagingButtonInfo);
 
+
+
         return ResponseEntity.ok(pagingResponse);
     }
 
