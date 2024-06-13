@@ -61,7 +61,7 @@ public class SiteInquiryService {
     }
 
     @Transactional(readOnly = true)
-    public InquiryResponse findByInquiryCode(Long inquiryCode) {
+    public InquiryResponse findByInquiryCode(Integer inquiryCode) {
         InquiryResponse inquiryDetail = siteInquiryRepository.findByInquiryCode(inquiryCode);
 
         return inquiryDetail;
