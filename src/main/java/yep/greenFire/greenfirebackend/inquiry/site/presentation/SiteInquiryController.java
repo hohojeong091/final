@@ -62,6 +62,19 @@ public class SiteInquiryController {
     }
 
 
+
+    @GetMapping("members/detail")
+    public ResponseEntity<InquiryResponse> getInquiryDetail(
+            @PathVariable final Long inquiryCode
+    ) {
+
+        InquiryResponse inquiryResponse = siteInquiryService.findByInquiryCode(inquiryCode);
+
+
+
+        return ResponseEntity.ok(inquiryResponse);
+    }
+
     //사이트 문의 답변 등록
 //    @GetMapping("/admin/regist")
 //    public ResponseEntity<AdminInquiryResponse> save (
