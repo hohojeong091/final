@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import yep.greenFire.greenfirebackend.auth.type.CustomUser;
@@ -72,9 +73,8 @@ public class SiteInquiryController {
 
         InquiryResponse inquiryResponse = siteInquiryService.findByInquiryCode(inquiryCode);
 
-
-
         return ResponseEntity.ok(inquiryResponse);
+//        return null;
     }
 
     //사이트 문의 답변 등록
